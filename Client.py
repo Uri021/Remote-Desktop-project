@@ -23,6 +23,7 @@ def commands_thread(commands_socket):
     mouse = MouseController()
     keyboard = KeyboardController()
     buffer = ""
+
     special_keys = {
         "space": Key.space,
         "backspace": Key.backspace,
@@ -47,14 +48,14 @@ def commands_thread(commands_socket):
                     
                 if cmd == "move":
                     try:
-                        x, y = int(parts[1]), int(parts[2])
+                        x, y = int(float(parts[1])), int(float(parts[2]))
                         mouse.position = (x, y)
                     except:
-                        pass  # ✅ קואורדינטות לא תקינות - תתעלם
+                        pass 
                 
                 elif cmd == "click":
                     try:
-                        x, y = int(parts[1]), int(parts[2])
+                        x, y = int(float(parts[1])), int(float(parts[2]))
                         mouse.position = (x, y)
                         mouse.click(Button.left)
                     except:
