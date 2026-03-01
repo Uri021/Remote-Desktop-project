@@ -31,9 +31,8 @@ def ScreenShot_Recieve(client_socket):
 def keyboard_thread(client_socket):
       def send_keyboard_click(key):
         try:
-            client_socket.send(f"key,{key.char}\n".encode())  # מקשים רגילים
+            client_socket.send(f"key,{key.char}\n".encode()) 
         except AttributeError:
-            # מקשים מיוחדים
             special = {
                 Key.space: "space",
                 Key.backspace: "backspace",
