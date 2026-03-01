@@ -45,8 +45,8 @@ def keyboard_thread(client_socket):
                 Key.delete: "delete",
                 Key.esc: "esc",
             }
-            if Key in special:
-                client_socket.send(f"special,{special[Key]}\n".encode())
+            if key in special:
+                client_socket.send(f"special,{special[key]}\n".encode())
       with KeyboardListener(on_press=send_keyboard_click) as listener:
             listener.join()
 
