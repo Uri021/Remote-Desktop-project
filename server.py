@@ -62,10 +62,10 @@ def mouse_thread(client_socket):
 
 if __name__ == "__main__":
       screenshot_server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-      screenshot_server.bind(("10.0.0.22", 1337))
+      screenshot_server.bind(("127.0.0.1", 1337))
       screenshot_server.listen(1)
       commands_server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-      commands_server.bind(("10.0.0.22", 1338))
+      commands_server.bind(("127.0.0.1", 1338))
       commands_server.listen(1)
       screenshot_client, _ = screenshot_server.accept()
       commands_client, _ = commands_server.accept()
