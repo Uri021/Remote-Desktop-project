@@ -82,9 +82,9 @@ def commands_thread(commands_socket):
 
 if __name__ == "__main__":
     screenshot_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    screenshot_socket.connect(("10.0.0.22", 1337))
+    screenshot_socket.connect(("127.0.0.1", 1337))
     commands_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    commands_socket.connect(("10.0.0.22", 1338))
+    commands_socket.connect(("127.0..0.1", 1338))
 
     threading.Thread(target=ScreenShot_thread, args=(screenshot_socket,), daemon=True).start()
     threading.Thread(target=commands_thread, args=(commands_socket,), daemon=True).start()
